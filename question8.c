@@ -1,4 +1,7 @@
+
 #include <stdio.h>
+
+void deci_to_binary(int);
 
 int main(void)
 {
@@ -11,10 +14,18 @@ int main(void)
     printf("8진수 : %o\n", ascii);
     printf("16진수 : %x\n", ascii);
     printf("2진수 : ");
+    deci_to_binary(ascii);
 
-    for(int i = 0; i < 8; i++){
-        binary[7 - i] = ascii % 2;
-        ascii = ascii / 2;
-    }
     return 0;
+}
+
+void deci_to_binary(int x)
+{
+    if(x <= 1){
+        printf("%d", x);
+    }
+    else{
+        deci_to_binary(x / 2);
+        printf("%d", x % 2);
+    }
 }
