@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -18,29 +19,28 @@ int main(void)
 
     while(1){
         printf("문자열을 입력 : ");
+        gets(buffer);
 
-        if(){ //엔터 누르면 문자열 새로받음.
-            p = (NODE *)malloc(sizeof(NODE));
-            strcpy(p->str, buffer);
-
-            if(list == NULL){ //리스트 비어있으면
-                list = p;
-            }
-            else{ //이전 노드의 끝에 새로운 노드 붙임
-                prev->link = p;
-            }
-            p->link = NULL;
-            prev = p;
-        }
-        else{ //엔터말고 딴거 누르면 중지
+        if(buffer[0] == '\0')
             break;
+
+        p = (NODE *)malloc(sizeof(NODE));
+        strcpy(p->str, buffer);
+
+        if(list == NULL){ //리스트 비어있으면
+            list = p;
         }
+        else{ //이전 노드의 끝에 새로운 노드 붙임
+            prev->link = p;
+        }
+        p->link = NULL;
+        prev = p;
     }
 
     //출력
     p = list;
     while(p != NULL){
-        printf("%s", p->str);
+        printf("%s\n", p->str);
         p = p->link;
     }
 
