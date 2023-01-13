@@ -1,4 +1,4 @@
-//1번 커밋바꿈 ㅋ
+//1번 문제
 #include <stdio.h>
 
 int main(void)
