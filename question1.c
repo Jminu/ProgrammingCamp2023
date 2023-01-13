@@ -1,4 +1,4 @@
-//1번
+//1번 커밋바꿈 ㅋ
 #include <stdio.h>
 
 int main(void)
